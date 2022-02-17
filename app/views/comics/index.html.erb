@@ -1,0 +1,95 @@
+<section class="hero is-success">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        漫画一覧
+      </h1>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <!--columnクラスを指定した列要素を折り返して複数行で表示する-->
+    <div class="columns is-multiline">
+      <% @comics.each do |comic| %>
+        <div class="column is-3">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <%= link_to comic_path(comic) do %>
+                  <%= attachment_image_tag comic, :image %>
+                <% end %>
+              </figure>
+            </div>
+            <div class="card-content">
+              <div class="content">
+                <div class="columns">
+                  <div class="column has-text-left"> 
+                    <strong><%= comic.title %></strong>
+                  </div>
+                  <div class="column has-text-right">
+                    <% if current_user %>
+                      <% if current_user.favorited?(comic) %>
+                        <%= link_to comic_favorites_path(comic), method: :delete do %>
+                          <p class="control">
+                            <button class="button is-danger">
+                              <span class="icon is-small">
+                                <i class="far fa-trash-alt"></i>
+                              </span>
+                              <span>削除</span>
+                            </button>
+                          </p>
+                        <% end %>
+                      <% else %>
+                        <%= link_to comic_favorites_path(comic), method: :post do %>
+                        <p class="control">
+                          <button class="button is-link">
+                            <span class="icon is-small">
+                              <i class="far fa-save"></i>
+                            </span>
+                            <span>お気に入り</span>
+                          </button>
+                        </p>
+                        <% end %>
+                      <% end %>
+                    <% end %>
+                  </div>
+                </div>
+                <strong>いいね数:&nbsp;</strong>
+                <% if current_user %>
+                	<% if current_user.liked?(comic) %>
+                  	 <%= link_to comic_likes_path(comic), method: :delete do %>
+                  	   <i class="fas fa-heart"></i>
+                     <% end %>
+                  <% else %>
+                    <%= link_to comic_likes_path(comic), method: :post do %>
+                      <i class="far fa-heart"></i>
+                	  <% end %>
+                	<% end %>
+                	<%= comic.likes.count %>
+                <% end %>
+              </div>
+              <!--mediaオブジェクトでユーザのプロフィール画像と名前を表示する-->
+              <div class="media">
+                <div class="media-left">
+                  <figure class="image is-24x24">
+                    <%= link_to user_path(comic.user.id) do %>
+                      <%= attachment_image_tag comic.user, :profile_image, fallback: "no-image.png"%>
+                    <% end %>
+                  </figure>
+                </div>
+                <div class="media-content">
+                  <div class="title is-5"><%=link_to comic.user.username, user_path(comic.user) %></div>
+                </div>
+              </div>
+              <div class="content">
+                <time><%= comic.updated_at.strftime("%Y-%m-%d %H:%M") %></time>更新
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>

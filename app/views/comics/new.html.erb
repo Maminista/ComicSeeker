@@ -1,0 +1,53 @@
+<section class="hero is-success">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        新規投稿
+      </h1>
+      <h2 class="subtitle">
+        漫画の新規投稿ページです<br>
+        漫画のタイトルと紹介したい内容、表紙の画像などを投稿しましょう！
+      </h2>
+    </div>
+  </div>
+</section>
+
+<% if @comic.errors.any? %>
+  <div class="notification is-danger">
+    <!--plualizeメソッドで単語の複数形や単数形を判別してくれる-->
+    <!--そのためエラーが1つの場合はerror,複数の場合はerrorsと表記される-->
+    <h2><%= pluralize(@comic.errors.count, "error") %> prohibited this object from being saved: not successfully</h2>
+    <ul>
+      <% @comic.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-6">
+        <%= form_for @comic do |f| %>
+          <div class="field">
+            <%= f.label :title, "タイトル", class: "label" %>
+            <%= f.text_field :title, class: "input" %>
+          </div>
+
+          <div class="field">
+            <%= f.label :body, "内容", class: "label" %>
+            <%= f.text_area :body, class: "textarea" %>
+          </div>
+
+          <div class="field">
+            <%= f.label :image, "写真", class: "label" %>
+            <%= f.attachment_field :image, class: "input" %>
+          </div>
+
+          <%= f.submit '投稿', class: "button is-success" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>

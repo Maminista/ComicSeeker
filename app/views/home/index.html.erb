@@ -1,0 +1,39 @@
+<!--sectionクラスでWebページを1つの固まりとして区切る-->
+<section class="section">
+  <!--mediaクラスでコンテナ要素内にコンテンツを配置する-->
+  <article class="media">
+    <!--media-contentで中央に配置する-->
+    <div class="media-content">
+      <!--content要素のテキストを中央に配置する-->
+      <div class="content has-text-centered">
+        <p>
+          <!--strongタグで強調する-->
+          <strong class="is-size-1" style="font-family: fantasy;">ComicSeeker</strong>
+        </p>
+      </div>
+      <div class="columns is-centered">
+        <div class="column is-5">
+          <br>
+          <%= link_to "ログイン", new_user_session_path, class: "button is-primary is-fullwidth" %>
+          <br>
+          <%= link_to "新規登録", new_user_registration_path, class: "button is-primary is-fullwidth" %>
+        </div>
+      </div>
+      
+      <div class="content has-text-centered">
+        <p class="is-size-5" style="font-family: sans-serif;">
+          あなたの好きな漫画がきっと見つかる
+        </p>
+      </div>
+    </div>
+  </article>
+  
+  <br>
+  <div class="columns is-centered">
+    <div class="column">
+      <figure>
+        <div class="main-image"></div>
+      </figure>
+    </div>
+  </div>
+</section>
