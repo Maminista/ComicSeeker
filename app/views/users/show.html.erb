@@ -5,6 +5,11 @@
       <h1 class="title">
         マイページ
       </h1>
+      <h2 class="subtitle">
+        ユーザのマイページです<br>
+        お気に入り登録をした漫画やフォローしたユーザなどを確認できます
+      </h2>
+    </div>
     </div>
   </div>
 </section>
@@ -18,6 +23,9 @@
             <figure class="image is-128x128"  style="margin-left: auto; margin-right: auto;">
               <%= attachment_image_tag @user, :profile_image, fallback: "no-image.png", class: "profile_image is-rounded" %>
             </figure>
+            <p class="ml-6">
+              <%= link_to @user.followings.count, followings_user_path(@user) %> フォロー <%= link_to @user.followers.count, followers_user_path(@user) %> フォロワー
+            </p>
           </div>
           <div class="column is-8">
             <table class="table is-fullwidth">
@@ -52,6 +60,11 @@
 
 <section class="section">
   <div class="container">
+    <section class="section">
+      <h1 class="title">
+        投稿一覧
+      </h1>
+    </section>
     <div class="columns is-multiline">
       <% @user.comics.each do |comic| %>
         <div class="column is-3">
@@ -83,6 +96,44 @@
                       </span>
                       この投稿を削除する
                     <% end %>
+                  <% end %>
+                </div>
+              </div>
+              <div class="content">
+                <time><%= comic.updated_at.strftime("%Y-%m-%d %H:%M") %></time>更新
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <section class="section">
+      <h1 class="title">
+        お気に入り一覧
+      </h1>
+    </section>
+    <div class="columns is-multiline">
+      <% @favorite_list.each do |comic| %>
+        <div class="column is-3">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <%= attachment_image_tag comic, :image %>
+              </figure>
+            </div>
+            <div class="card-content">
+              <div class="media">
+                <div class="media-content">
+                  <%= link_to comic_path(comic), class: "panel-block" do %>
+                    <span class="panel-icon">
+                      <i class="fas fa-book" aria-hidden="true"></i>
+                    </span>
+                    この投稿を見る
                   <% end %>
                 </div>
               </div>

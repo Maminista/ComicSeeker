@@ -2,35 +2,22 @@
   <div class="hero-body">
     <div class="container">
       <h1 class="title">
-        漫画一覧
+        ランキング
       </h1>
       <h2 class="subtitle">
-        ユーザが投稿した漫画一覧ページです！！<br>
-        漫画の詳細やお気に入り登録、いいね機能などはログインが必要です！！
+        ユーザがいいねを押した漫画の中から上位100件がランキングとして表示されます！！
       </h2>
     </div>
   </div>
 </section>
 
-<%= form_with url: search_comics_path, method: :get, local: true do |f| %>
-<div class="field">
-  <label class="label">検索フォーム</label>
-  <div class="control">
-    <%= f.text_field :keyword, value: @keyword %>
-  </div>
-  <div class="text-center"> 
-    <%= f.submit "検索" %>
-  </div>
-  <p class="help is-info">気になる漫画のタイトルなどを検索してみてください！！</p>
-</div>
-<% end %>
-
 <section class="section">
   <div class="container">
     <!--columnクラスを指定した列要素を折り返して複数行で表示する-->
     <div class="columns is-multiline">
-      <% @comics.each do |comic| %>
+      <% @all_ranks.each.with_index(1) do |comic, i| %>
         <div class="column is-3">
+          <strong><%= i %>位</strong>
           <div class="card">
             <div class="card-image">
               <figure class="image is-4by3">
@@ -73,9 +60,9 @@
                     <% end %>
                   </div>
                 </div>
+                <strong>いいね数:&nbsp;</strong>
                 <% if current_user %>
                 	<% if current_user.liked?(comic) %>
-                	<strong>いいね数:&nbsp;</strong>
                   	 <%= link_to comic_likes_path(comic), method: :delete do %>
                   	   <i class="fas fa-heart"></i>
                      <% end %>
@@ -84,7 +71,7 @@
                       <i class="far fa-heart"></i>
                 	  <% end %>
                 	<% end %>
-                	<%= comic.likes.count %>
+                  <%= comic.likes.count %>
                 <% end %>
               </div>
               <!--mediaオブジェクトでユーザのプロフィール画像と名前を表示する-->
@@ -100,19 +87,17 @@
                   <div class="title is-5"><%=link_to comic.user.username, user_path(comic.user) %></div>
                 </div>
                 <div class="media-right">
-                  <% if user_signed_in? %>
-                    <% if comic.user != current_user %>
-                      <% if comic.user.is_followed_by?(current_user) %>
-                        <%=link_to user_relationships_path(comic.user), method: :delete do %>
-                          <button class="button is-info is-rounded"> 解除</button>
-                        <% end %>
-                      <% else %>
-                        <%=link_to user_relationships_path(comic.user), method: :post do %>
-                          <button class="button is-danger is-rounded">フォロー</button>
-                        <% end %>
-                      <% end %>
-                    <% end %>
-                  <% end %>
+                 <% if comic.user != current_user %>
+                   <% if comic.user.is_followed_by?(current_user) %>
+                     <%=link_to user_relationships_path(comic.user), method: :delete do %>
+                       <button class="button is-info is-rounded">解除</button>
+                     <% end %>
+                   <% else %>
+                     <%=link_to user_relationships_path(comic.user), method: :post do %>
+                       <button class="button is-danger is-rounded">フォロー</button>
+                     <% end %>
+                   <% end %>
+                 <% end %>
                 </div>
               </div>
               <div class="content">

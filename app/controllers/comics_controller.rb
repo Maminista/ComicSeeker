@@ -7,6 +7,9 @@ class ComicsController < ApplicationController
 
   def show
     @comic = Comic.find(params[:id])
+    
+    @comments = @comic.comments
+    @comment = Comment.new
   end
 
   def new
@@ -47,6 +50,16 @@ class ComicsController < ApplicationController
     redirect_to comics_path
   end
   
+  def ranking
+    @all_ranks = Comic.find(Like.group(:comic_id).order('count(comic_id) desc').limit(100).pluck(:comic_id))
+  end
+  
+  def search
+    @comics = Comic.search(params[:keyword])
+    @keyword = params[:keyword]
+    render "index"
+  end
+
   private
   def comic_params
     params.require(:comic).permit(:title, :body, :image)

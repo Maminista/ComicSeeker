@@ -13,6 +13,10 @@ class UsersController < ApplicationController
     #controllerのactionでインスタンス変数を定義してviewに渡すのが大体のパターン
     #paramsはURLからUserモデルのidを取得する
     @user = User.find(params[:id])
+    @comcis = @user.comics
+
+    favorites = Favorite.where(user_id: current_user.id).pluck(:comic_id)  # ログイン中のユーザーのお気に入りのpost_idカラムを取得
+    @favorite_list = Comic.find(favorites)
   end
 
   def edit
@@ -20,6 +24,16 @@ class UsersController < ApplicationController
     if @user != current_user
       redirect_to users_path, alert: "不正なアクセスです"
     end
+  end
+  
+  def followings
+    user = User.find(params[:id])
+    @users = user.followings
+  end
+
+  def followers
+    user = User.find(params[:id])
+    @users = user.followers
   end
   
   def update
@@ -33,6 +47,12 @@ class UsersController < ApplicationController
     else
       render :edit
     end
+  end
+  
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+    redirect_to root_path, notice: "ユーザを削除しました"
   end
   
   private

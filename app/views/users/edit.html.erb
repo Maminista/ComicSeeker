@@ -19,7 +19,7 @@
       <% end %>
     </ul>
   </div>
-<% end %>>
+<% end %>
 
 <section class="section">
   <div class="container">
@@ -45,9 +45,18 @@
             <%= f.label :profile_image, "プロフィール画像", class: "label" %>
             <%= f.attachment_field :profile_image, class: "input" %>
           </div>
-
-          <%= f.submit "更新", class: "button is-success" %>
+          
+          <div class="columns">
+            <div class="column has-text-right">
+              <%= f.submit "更新", class: "button is-success" %>
+            </div>
         <% end %>
+            <%= link_to user_path(@user), method: :delete, data: {confirm: "削除しますか？"}, class: "panel-block" do %>
+              <button class="button is-danger">
+                <span>削除</span>
+              </button>
+            <% end %>
+          </div>
       </div>
     </div>
   </div>

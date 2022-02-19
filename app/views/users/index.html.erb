@@ -4,6 +4,10 @@
       <h1 class="title">
         ユーザ一覧
       </h1>
+      <h2 class="subtitle">
+        登録済みのユーザ一覧ページです！！<br>
+        好きな漫画を共有しましょう！！
+      </h2>
     </div>
   </div>
 </section>
@@ -24,8 +28,25 @@
               </div>
             </div>
             <div class="card-content">
+              <div class="columns">
+                <div class="column has-text-right">
+                  <% if current_user %>
+                    <% if user != current_user %>
+                      <% if user.is_followed_by?(current_user) %>
+                        <%=link_to user_relationships_path(user), method: :delete do %>
+                          <button class="button is-info is-rounded">解除</button>
+                        <% end %>
+                      <% else %>
+                        <%=link_to user_relationships_path(user), method: :post do %>
+                          <button class="button is-danger is-rounded">フォロー</button>
+                        <% end %>
+                      <% end %>
+                    <% end %>
+                  <% end %>
+                </div>
+              </div>
               <div class="media">
-                <div class="media-content">
+                <div class="media-left">
                   <div class="title"><%=link_to user.username, user_path(user) %></div>
                 </div>
               </div>

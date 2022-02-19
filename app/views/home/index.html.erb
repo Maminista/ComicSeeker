@@ -8,21 +8,34 @@
       <div class="content has-text-centered">
         <p>
           <!--strongタグで強調する-->
-          <strong class="is-size-1" style="font-family: fantasy;">ComicSeeker</strong>
+          <strong class="is-size-1" style="font-family: fantasy;">ComicSeeker&nbsp;</strong>
+          <span class="icon is-size-2">
+            <i class="fa-brands fa-searchengin"></i>
+          </span>
         </p>
       </div>
       <div class="columns is-centered">
         <div class="column is-5">
           <br>
-          <%= link_to "ログイン", new_user_session_path, class: "button is-primary is-fullwidth" %>
+          <%= link_to new_user_session_path, class: "button is-primary is-fullwidth" do %>
+            ログイン&nbsp;
+            <i class="fa-solid fa-right-to-bracket"></i>
+          <% end %>
           <br>
-          <%= link_to "新規登録", new_user_registration_path, class: "button is-primary is-fullwidth" %>
+          <%= link_to new_user_registration_path, class: "button is-primary is-fullwidth" do %>
+            新規登録&nbsp;
+            <i class="fa-solid fa-user-plus"></i>
+          <% end %>
         </div>
       </div>
       
       <div class="content has-text-centered">
         <p class="is-size-5" style="font-family: sans-serif;">
           あなたの好きな漫画がきっと見つかる
+        </p>
+        <p class="is-size-8" style="font-family: sans-serif;">
+          ComicSeekerは自分が好きな漫画を紹介し、それをユーザ同士で共有できる漫画検索ツールです<br>
+          
         </p>
       </div>
     </div>

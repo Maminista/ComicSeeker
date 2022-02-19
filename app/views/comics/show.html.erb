@@ -55,9 +55,9 @@
       </div>
 
       <div class="column is-4">
-        <article class="panel is-link">
+        <article class="panel is-info">
           <p class="panel-heading">
-            By <%= @comic.user.username %>
+            投稿者: <%= @comic.user.username %>
           </p>
           <div class="panel-block">
             <p class="control">
@@ -71,7 +71,39 @@
             <%= @comic.user.username %> さんのページへ
           <% end %>
         </article>
+        
+        <article class="panel">
+          <nav class="panel is-info">
+            <p class="panel-heading">
+              コメント
+            </p>
+          </nav>
+          <div class="media-content">
+            <div class="content">
+              <% @comments.each do |c| %>
+                <a href="/users/<%= c.user.id %>"><%= c.user.username %></a>
+                <%= c.content %>
+                <% if c.user.id == current_user.id %>
+                  <%= link_to comic_comment_path(@comic, c), data: {confirm: '本当に削除しますか？'}, method: :delete do %>
+                    <div class="buttons are-small">
+                      <button class="button is-danger">
+                        <span>削除</span>
+                      </button>
+                    </div>
+                  <% end %>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
+          <%= form_for [@comic, @comment] do |f| %>
+            <%= f.text_area :content %>
+            <%= f.hidden_field :comic_id, value: @comic.id %> 
+            <br>
+            <%= f.submit 'コメントする', class: "btn btn-primary" %>
+          <% end %>
+        </article>
       </div>
     </div>
   </div>
 </section>
+

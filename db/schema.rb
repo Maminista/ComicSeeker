@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_17_044058) do
+ActiveRecord::Schema.define(version: 2022_02_18_223428) do
 
   create_table "comics", force: :cascade do |t|
     t.integer "user_id"
@@ -19,6 +19,16 @@ ActiveRecord::Schema.define(version: 2022_02_17_044058) do
     t.string "image_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.string "content"
+    t.integer "user_id"
+    t.integer "comic_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["comic_id"], name: "index_comments_on_comic_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "favorites", force: :cascade do |t|
@@ -31,6 +41,13 @@ ActiveRecord::Schema.define(version: 2022_02_17_044058) do
   create_table "likes", force: :cascade do |t|
     t.integer "user_id"
     t.integer "comic_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "relationships", force: :cascade do |t|
+    t.integer "following_id"
+    t.integer "follower_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

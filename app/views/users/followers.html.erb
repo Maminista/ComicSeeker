@@ -1,0 +1,45 @@
+<section class="hero is-success">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        フォロワー
+      </h1>
+      <h2 class="subtitle">
+        フォロワー一覧ページです！！<br>
+        フォローされたユーザのマイページへ遷移できます！！
+      </h2>
+    </div>
+  </div>
+</section>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td>
+          <%= link_to user_path(user) do %>
+            <%= user.username %>
+          <% end %>
+        </td>
+        <td>
+          <% if user != current_user %>
+            <% if user.is_followed_by?(current_user) %>
+              <%=link_to user_relationships_path(user), method: :delete do %>
+                <button class="button is-info is-rounded"> 解除</button>
+              <% end %>
+            <% else %>
+              <%=link_to user_relationships_path(user), method: :post do %>
+                <button class="button is-danger is-rounded">フォロー</button>
+              <% end %>
+             <% end %>
+           <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
