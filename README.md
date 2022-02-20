@@ -33,7 +33,8 @@ https://comicseeker.herokuapp.com/
 ![新規投稿](https://user-images.githubusercontent.com/95627997/154869505-69fc1ea9-ea66-404f-b339-a71fe07c3a82.gif)
 ### 漫画一覧
 ![漫画一覧ページ](https://user-images.githubusercontent.com/95627997/154869552-ae0e5e30-0060-4b02-804e-e862cf01dce7.gif)
-
+### 漫画詳細
+![投稿詳細からユーザページへの遷移とコメント](https://user-images.githubusercontent.com/95627997/154869520-3cf6d079-4c31-41ac-b076-fa13ddc4df24.gif)
 
 ## ER図
 ![ER](https://user-images.githubusercontent.com/95627997/154842553-8f1ad091-b6c4-492f-8a81-181132b55451.jpg)
