@@ -28,6 +28,7 @@ https://comicseeker.herokuapp.com/
 検索|ユーザが条件に合う漫画を探しやすくするため|漫画一覧ページに検索フォームを用意し、漫画のタイトルやキーワード入力で検索が可能である
 ## 実装した機能の操作
 
+
 ## ER図
 ![ER](https://user-images.githubusercontent.com/95627997/154842553-8f1ad091-b6c4-492f-8a81-181132b55451.jpg)
 ## 今後実装したい機能
