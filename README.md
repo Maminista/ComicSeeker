@@ -30,6 +30,6 @@ https://comicseeker.herokuapp.com/
 ## 実装した機能の操作
 
 ## ER図
-<img src="https://github.com/Maminista/comicseeker/issues/1#issue-1145005664" alt="ER>
+https://github.com/Maminista/comicseeker/issues/1#issue-1145005664
 
 ## 今後実装したい機能
