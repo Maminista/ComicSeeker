@@ -31,5 +31,4 @@ https://comicseeker.herokuapp.com/
 
 ## ER図
 
-
 ## 今後実装したい機能
