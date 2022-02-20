@@ -27,19 +27,13 @@ https://comicseeker.herokuapp.com/
 フォロー|コンセプトであるユーザとの共有をさらに明確にするためにフォロー機能をつける|漫画一覧ページや投稿者一覧ページからフォローすることができ、マイページでフォロー数フォロワー数を表示する<br>また、マイページのからフォローフォロワー一覧ページへ遷移できる
 検索|ユーザが条件に合う漫画を探しやすくするため|漫画一覧ページに検索フォームを用意し、漫画のタイトルやキーワード入力で検索が可能である
 ## 実装した機能の操作
-- <strong>登録</strong>
-
+### 登録
 ![ログイン](https://user-images.githubusercontent.com/95627997/154869475-b7f073e3-dd0e-4bfd-88bd-2af0558735c0.gif)
-
-- <strong>新規投稿</strong>
-
+### 新規投稿
 ![新規投稿](https://user-images.githubusercontent.com/95627997/154869505-69fc1ea9-ea66-404f-b339-a71fe07c3a82.gif)
+### 漫画一覧
+![漫画一覧ページ](https://user-images.githubusercontent.com/95627997/154869552-ae0e5e30-0060-4b02-804e-e862cf01dce7.gif)
 
-- <strong></strong>
-
-- <strong></strong>
-
-- <strong></strong>
 
 ## ER図
 ![ER](https://user-images.githubusercontent.com/95627997/154842553-8f1ad091-b6c4-492f-8a81-181132b55451.jpg)
