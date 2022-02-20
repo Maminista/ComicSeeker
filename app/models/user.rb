@@ -21,8 +21,6 @@ class User < ApplicationRecord
   
   validates :username, presence: true
   
-  validates :comment_text, presence: true, length: { maximum: 1000 }
-  
   def liked?(comic)
     self.likes.exists?(comic_id: comic.id)
   end
