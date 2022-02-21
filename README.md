@@ -47,6 +47,9 @@ https://comicseeker.herokuapp.com/
 ![いいねランキング](https://user-images.githubusercontent.com/95627997/154869233-2125fba0-8fb1-4c6b-9b98-2efb4c3b66bd.gif)
 ## お気に入り登録
 ![お気に入り登録からマイページへ](https://user-images.githubusercontent.com/95627997/154869345-ccb971a4-3be6-4bcd-bfd1-3fdd7fee0058.gif)
+## フォロー
+![フォロー](https://user-images.githubusercontent.com/95627997/154869361-4fe80fa9-e42d-4c60-86a8-d0d82b16edfe.gif)
+## 検索
 
 ## ER図
 ![ER](https://user-images.githubusercontent.com/95627997/154842553-8f1ad091-b6c4-492f-8a81-181132b55451.jpg)
