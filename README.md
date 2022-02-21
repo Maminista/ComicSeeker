@@ -41,6 +41,10 @@ https://comicseeker.herokuapp.com/
 ![ユーザ一覧ページ](https://user-images.githubusercontent.com/95627997/154869395-17cef27e-b7fa-418c-9424-7133bafd24cc.gif)
 ## マイページ
 ![マイページ](https://user-images.githubusercontent.com/95627997/154869381-eb9e015c-fc17-4f81-b251-0634114f8887.gif)
+## ユーザ編集
+![ユーザ編集](https://user-images.githubusercontent.com/95627997/154869417-d0b6ed95-0a11-4810-8961-2341fe2a6aad.gif)
+##
+
 
 ## ER図
 ![ER](https://user-images.githubusercontent.com/95627997/154842553-8f1ad091-b6c4-492f-8a81-181132b55451.jpg)
