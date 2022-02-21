@@ -29,28 +29,103 @@ https://comicseeker.herokuapp.com/
 ## 実装した機能の操作
 ### 登録
 ![ログイン](https://user-images.githubusercontent.com/95627997/154869475-b7f073e3-dd0e-4bfd-88bd-2af0558735c0.gif)
+<ol>
+ <li>ヘッダーのログインボタンをクリックする</li>
+ <li>deviseで作成したログインページへ遷移する</li>
+ <li>通常通りログインを行う</li>
+ <li>ログインに成功するとサクセスメッセージが表示される</li>
+</ol>※二度手間防止のためログインに関して記述しているが新規登録も同様に可能<br></br>
+
 ### 新規投稿
 ![新規投稿](https://user-images.githubusercontent.com/95627997/154869505-69fc1ea9-ea66-404f-b339-a71fe07c3a82.gif)
+<ol>
+ <li>ヘッダーの新規投稿ボタンをクリックすると新規投稿ページへ遷移する</li>
+ <li>漫画のタイトル、紹介内容に関しての入力フォーム、refileにより画像の登録が可能</li>
+ <li>新規投稿後は漫画詳細ページへ遷移する</li>
+ <li>漫画一覧ページを見ると投稿が反映されていることが分かる</li>
+</ol>※バリデーションにより空の投稿はできない<br>※投稿画像に使用している表紙画像の著作権に関しては本READMEの「著作権当」を参照してください
+
 ### 漫画一覧
 ![漫画一覧ページ](https://user-images.githubusercontent.com/95627997/154869552-ae0e5e30-0060-4b02-804e-e862cf01dce7.gif)
+<ol>
+ <li>ヘッダーの漫画一覧ボタンをクリックすると漫画一覧ページへ遷移する</li>
+ <li>各ユーザが投稿したタイトルと画像が一覧形式で表示される</li>
+ <li>漫画一覧ページではその他に、お気に入り登録、いいね機能、ユーザのフォローが可能である</li>
+</ol><br></br>
+
 ### 漫画詳細
 ![投稿詳細からユーザページへの遷移とコメント](https://user-images.githubusercontent.com/95627997/154869520-3cf6d079-4c31-41ac-b076-fa13ddc4df24.gif)
+<ol>
+ <li>漫画一覧ページやランキングページなどの画像をクリックすると漫画詳細ページへ遷移する</li>
+ <li>漫画詳細ページでは漫画一覧ページでは枠の関係で表示できなかった漫画の紹介内容が表示される</li>
+ <li>投稿したユーザの情報も表示され、該当ユーザのマイページへ遷移できる</li>
+ <li>コメントの投稿も可能</li>
+ <li>投稿したユーザのみ編集ボタンが表示され、投稿編集ページへ遷移できる</li>
+</ol><br></br>
+
 ### 投稿編集
 ![投稿編集](https://user-images.githubusercontent.com/95627997/154870225-da6c15dc-a14e-47b6-b85f-682ef6423835.gif)
-## 投稿者一覧
+<ol>
+ <li></li>
+ <li></li>
+ <li></li>
+</ol><br></br>
+
+### 稿者一覧
 ![ユーザ一覧ページ](https://user-images.githubusercontent.com/95627997/154869395-17cef27e-b7fa-418c-9424-7133bafd24cc.gif)
-## マイページ
+<ol>
+ <li></li>
+ <li></li>
+ <li></li>
+</ol><br></br>
+
+### イページ
 ![マイページ](https://user-images.githubusercontent.com/95627997/154869381-eb9e015c-fc17-4f81-b251-0634114f8887.gif)
-## ユーザ編集
+<ol>
+ <li></li>
+ <li></li>
+ <li></li>
+</ol><br></br>
+
+### ーザ編集
 ![ユーザ編集](https://user-images.githubusercontent.com/95627997/154869417-d0b6ed95-0a11-4810-8961-2341fe2a6aad.gif)
-## いいね機能とランキングページ
+<ol>
+ <li></li>
+ <li></li>
+ <li></li>
+</ol><br></br>
+
+### いね機能とランキングページ
 ![いいねランキング](https://user-images.githubusercontent.com/95627997/154869233-2125fba0-8fb1-4c6b-9b98-2efb4c3b66bd.gif)
-## お気に入り登録
+<ol>
+ <li></li>
+ <li></li>
+ <li></li>
+</ol><br></br>
+
+### 気に入り登録
 ![お気に入り登録からマイページへ](https://user-images.githubusercontent.com/95627997/154869345-ccb971a4-3be6-4bcd-bfd1-3fdd7fee0058.gif)
-## フォロー
+<ol>
+ <li></li>
+ <li></li>
+ <li></li>
+</ol><br></br>
+
+### フォロー
 ![フォロー](https://user-images.githubusercontent.com/95627997/154869361-4fe80fa9-e42d-4c60-86a8-d0d82b16edfe.gif)
-## 検索
+<ol>
+ <li></li>
+ <li></li>
+ <li></li>
+</ol><br></br>
+
+### 検索
 ![検索機能](https://user-images.githubusercontent.com/95627997/154869489-7304a1c1-97a6-4121-9986-ebfff10a23fd.gif)
+<ol>
+ <li></li>
+ <li></li>
+ <li></li>
+</ol><br></br>
 
 ## ER図
 ![ER](https://user-images.githubusercontent.com/95627997/154842553-8f1ad091-b6c4-492f-8a81-181132b55451.jpg)
