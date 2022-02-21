@@ -50,6 +50,7 @@ https://comicseeker.herokuapp.com/
 ## フォロー
 ![フォロー](https://user-images.githubusercontent.com/95627997/154869361-4fe80fa9-e42d-4c60-86a8-d0d82b16edfe.gif)
 ## 検索
+![検索機能](https://user-images.githubusercontent.com/95627997/154869489-7304a1c1-97a6-4121-9986-ebfff10a23fd.gif)
 
 ## ER図
 ![ER](https://user-images.githubusercontent.com/95627997/154842553-8f1ad091-b6c4-492f-8a81-181132b55451.jpg)
