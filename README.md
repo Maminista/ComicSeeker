@@ -149,7 +149,7 @@ CSSフレームワークとしてBulmaを使用したが、自分の技術不足
 <li>言語</li>
  　Ruby 2.5.1 <br></br>
 <li>フレームワーク</li>
- 　Rails 5.2.6.2<br></br>
+ 　Ruby on Rails 5.2.6.2<br></br>
 <li>データベース</li>
 　開発時: sqlite3<br>
 　本番環境: PostgreSQL<br></br>
